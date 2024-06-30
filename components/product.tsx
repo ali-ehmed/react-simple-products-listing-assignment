@@ -1,12 +1,14 @@
+'use client'
 import { Star } from 'lucide-react';
 import React from 'react';
 import Image from "next/image";
 import { Card, CardHeader, CardContent, CardTitle, CardDescription, CardFooter } from './ui/card';
 import { Button } from './ui/button';
 import { IProduct } from '@/types';
-
+import { useRouter } from 'next/navigation';
 const Product = ({ product }: { product: IProduct }) => {
 
+    const router = useRouter()
 
     return (
         <Card key={product.id} className={"cursor-pointer"}>
@@ -38,7 +40,7 @@ const Product = ({ product }: { product: IProduct }) => {
                 </div>
             </CardContent>
             <CardFooter>
-                <Button className={"w-24"}>Buy now</Button>
+                <Button className={"w-24"} onClick={() => router.push('/payment')}>Buy now</Button>
             </CardFooter>
         </Card>
     )
