@@ -3,7 +3,8 @@ import { GeistMono } from 'geist/font/mono';
 import { GeistSans } from 'geist/font/sans';
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { fetchProducts, ProductProvider } from "@/context/product";
+import { ProductProvider } from "@/context/product";
+import { fetchProducts } from "@/actions";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,13 +16,14 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const initialProducts = await fetchProducts({ pageParam: 0 });
   return (
     <html
       lang="en"
       className={cn(GeistSans.variable, GeistMono.variable)}
     >
       <body>
-        <ProductProvider>
+        <ProductProvider initialProducts={initialProducts}>
           <div className='flex min-h-screen w-full flex-col'>
             <main className='flex flex-1 flex-col overflow-hidden bg-muted/50'>
               <div className='py-10 px-8'>

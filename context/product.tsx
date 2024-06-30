@@ -19,8 +19,8 @@ export const useProducts = (): ProductContextType => {
     return context;
 };
 
-export const ProductProvider = ({ children }: { children: ReactNode }) => {
-    const [products, setProducts] = useState<IProduct[]>([]);
+export const ProductProvider = ({ children, initialProducts }: { children: ReactNode, initialProducts: IProduct[] }) => {
+    const [products, setProducts] = useState<IProduct[]>(initialProducts);
     const [page, setPage] = useState(1);
 
     useEffect(() => {

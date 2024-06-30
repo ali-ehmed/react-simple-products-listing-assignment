@@ -1,4 +1,3 @@
-'use client'
 import PageTitle from "@/components/page-title";
 import ProductListing from "@/components/product-listing";
 import { useProducts } from "@/context/product";
