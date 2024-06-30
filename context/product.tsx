@@ -24,7 +24,7 @@ export const ProductProvider = ({ children, initialProducts }: { children: React
     const [products, setProducts] = useState<IProduct[]>(initialProducts);
     const [hasMoreProducts, setHasMoreProducts] = useState(true);
     const [page, setPage] = useState(1);
-    const postsPerPage = 10;
+    const postsPerPage = 8;
 
 
     const loadMoreProducts = useCallback(async () => {
