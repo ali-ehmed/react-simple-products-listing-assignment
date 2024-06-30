@@ -4,8 +4,6 @@ import ProductListing from "@/components/product-listing";
 import { useProducts } from "@/context/product";
 
 export default function Home() {
-  const { products } = useProducts();
-  console.log(products)
   return (
     <>
       <PageTitle title="Products" />
