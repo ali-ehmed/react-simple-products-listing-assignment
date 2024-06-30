@@ -23,6 +23,7 @@ export default function ProductListing() {
                     <Product product={product} key={product.id} />
                 )) : <div className="text-center">No products found</div>}
             </div>
+
             {
                 products.length > 0 && hasMoreProducts && (
                     <div ref={ref} className="mt-10 flex justify-center items-center">

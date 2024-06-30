@@ -4,7 +4,7 @@ This is a dynamic Product Listing Application developed using Next.js, React, an
 
 ### Live Demo
 
-You can view a live demo of the app here: [Product Listing App](https://fe-assessment-five.vercel.app/)
+You can view a live demo of the app here: [Product Listing App](https://react-rails-products-listing-assignment.vercel.app/)
 
 ### Features
 
@@ -18,6 +18,7 @@ You can view a live demo of the app here: [Product Listing App](https://fe-asses
 
 To run this project locally, you will need:
 
+- NextJS (14.2.4)
 - Node.js (v18.x or later)
 - npm (v8.x or later)
 - A modern web browser
@@ -28,8 +29,8 @@ Follow these steps to get the application running on your local machine:
 
 1. **Clone the repository**
    ```bash
-   git clone git@github.com:Master-Tek/react-rails-products-listing-assignment.git
-   cd fe-assessment
+   git clone git@github.com:ali-ehmed/react-rails-products-listing-assignment.git
+   cd react-rails-products-listing-assignment.git
    ```
 
 2. **Install dependencies**

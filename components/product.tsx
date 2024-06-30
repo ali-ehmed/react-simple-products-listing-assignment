@@ -6,8 +6,8 @@ import { Card, CardHeader, CardContent, CardTitle, CardDescription, CardFooter }
 import { Button } from './ui/button';
 import { IProduct } from '@/types';
 import { useRouter } from 'next/navigation';
-const Product = ({ product }: { product: IProduct }) => {
 
+const Product = ({ product }: { product: IProduct }) => {
     const router = useRouter()
 
     return (
