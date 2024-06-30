@@ -42,7 +42,9 @@ export const ProductProvider = ({ children }: { children: ReactNode }) => {
     }, [page]);
 
     return (
-        <ProductContext.Provider value={{ products, loadMoreProducts }}>
+        <ProductContext.Provider value={{
+            products, loadMoreProducts
+        }}>
             {children}
         </ProductContext.Provider>
     );

@@ -3,6 +3,7 @@
 import { useProducts } from "@/context/product";
 import { useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
+import Product from "./product";
 
 export default function ProductListing() {
     const { products, loadMoreProducts } = useProducts();
