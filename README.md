@@ -4,7 +4,7 @@ This is a dynamic Product Listing Application developed using Next.js, React, an
 
 ### Live Demo
 
-You can view a live demo of the app here: [Product Listing App](https://react-rails-products-listing-assignment.vercel.app/)
+You can view a live demo of the app here: [Product Listing App](https://react-simple-products-listing-assignment.vercel.app/)
 
 ### Features
 
