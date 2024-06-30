@@ -8,17 +8,13 @@ export const createClient = () =>
 
 export const supabaseClient = createClient();
 
-
-
-export async function fetchProducts({ pageParam = 0, postsPerPage = 8 }) {
+export async function fetchProducts({ pageParam = 0, postsPerPage = 10 }) {
     const start = pageParam * postsPerPage;
     const end = start + postsPerPage - 1;
     const products = await supabaseClient
         .from('Notes')
         .select('*')
         .range(start, end);
-
-
 
     if (products.error) {
         throw new Error(products.error.message);

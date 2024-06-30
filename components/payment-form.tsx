@@ -28,7 +28,6 @@ import { useRouter } from "next/navigation";
 
 type Input = z.infer<typeof paymentSchema>;
 
-
 export default function PaymentForm() {
     const form = useForm<Input>({
         resolver: zodResolver(paymentSchema),
@@ -143,5 +142,4 @@ export default function PaymentForm() {
             </Card>
         </div>
     )
-
 }

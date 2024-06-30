@@ -26,7 +26,6 @@ export const ProductProvider = ({ children, initialProducts }: { children: React
     const [page, setPage] = useState(1);
     const postsPerPage = 8;
 
-
     const loadMoreProducts = useCallback(async () => {
         if (!hasMoreProducts) return;
 
