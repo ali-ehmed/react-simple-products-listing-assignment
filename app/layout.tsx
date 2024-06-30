@@ -4,7 +4,7 @@ import { GeistSans } from 'geist/font/sans';
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ProductProvider } from "@/context/product";
-import { fetchProducts } from "@/actions";
+import { fetchProducts } from "@/lib/supabase/client";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +16,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const initialProducts = await fetchProducts({ pageParam: 0 });
+  const initialProducts = await fetchProducts({});
   return (
     <html
       lang="en"

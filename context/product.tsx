@@ -1,12 +1,13 @@
 'use client'
 
-import { fetchProducts } from '@/actions';
+import { fetchProducts } from '@/lib/supabase/client';
 import { IProduct } from '@/types';
 import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
 
 interface ProductContextType {
     products: IProduct[];
-    loadMoreProducts: () => void;
+    loadMoreProducts: () => Promise<void>
+    hasMoreProducts: boolean;
 }
 
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
@@ -21,29 +22,30 @@ export const useProducts = (): ProductContextType => {
 
 export const ProductProvider = ({ children, initialProducts }: { children: ReactNode, initialProducts: IProduct[] }) => {
     const [products, setProducts] = useState<IProduct[]>(initialProducts);
+    const [hasMoreProducts, setHasMoreProducts] = useState(true);
     const [page, setPage] = useState(1);
+    const postsPerPage = 10;
 
-    useEffect(() => {
-        const loadInitialProducts = async () => {
-            const initialProducts = await fetchProducts({ pageParam: 0 });
-            setProducts(initialProducts);
-        };
-
-        loadInitialProducts();
-    }, []);
 
     const loadMoreProducts = useCallback(async () => {
-        const nextPage = page + 10;
-        const newProductsData = await fetchProducts({ pageParam: nextPage });
-        if (newProductsData?.length) {
+        if (!hasMoreProducts) return;
+
+        const nextPage = page + 1;
+        const newProductsData = await fetchProducts({ pageParam: nextPage, postsPerPage });
+        if (newProductsData.length > 0) {
             setPage(nextPage);
             setProducts((prevProducts) => [...prevProducts, ...newProductsData]);
+            if (newProductsData.length < postsPerPage) {
+                setHasMoreProducts(false);
+            }
+        } else {
+            setHasMoreProducts(false);
         }
-    }, [page]);
+    }, [page, hasMoreProducts]);
 
     return (
         <ProductContext.Provider value={{
-            products, loadMoreProducts
+            products, loadMoreProducts, hasMoreProducts
         }}>
             {children}
         </ProductContext.Provider>

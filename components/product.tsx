@@ -11,12 +11,12 @@ const Product = ({ product }: { product: IProduct }) => {
     const router = useRouter()
 
     return (
-        <Card key={product.id} className={"cursor-pointer"}>
+        <Card key={product.id}>
             <CardHeader>
                 <div className={'h-40 w-50 relative'}>
                     <Image
                         alt={product.thumbnail}
-                        src={product.thumbnail}
+                        src={product.images}
                         fill
                         sizes={'50vw'}
                         style={{ objectFit: "cover" }} />
