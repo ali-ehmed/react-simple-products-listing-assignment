@@ -29,8 +29,8 @@ Follow these steps to get the application running on your local machine:
 
 1. **Clone the repository**
    ```bash
-   git clone git@github.com:ali-ehmed/react-rails-products-listing-assignment.git
-   cd react-rails-products-listing-assignment.git
+   git clone git@github.com:ali-ehmed/react-simple-products-listing-assignment.git
+   cd react-simple-products-listing-assignment.git
    ```
 
 2. **Install dependencies**
