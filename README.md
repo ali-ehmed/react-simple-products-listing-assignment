@@ -1,6 +1,6 @@
 ## Product Listing App
 
-This is a dynamic Product Listing Application developed using Next.js, React, and TypeScript. The app initially loads 20 products from the server side and utilizes infinite scroll to load additional batches of 20 products as the user scrolls down. Each product includes a "Buy Now" button that directs users to a payment page featuring a simple form with Zod validation, masked inputs using `react-input-mask`, and form management via `react-hook-form`.
+This is a dynamic Product Listing Application developed using Next.js, React, and TypeScript. The app initially loads 8 products from the server side and utilizes infinite scroll to load additional batches 8 products as the user scrolls down. Each product includes a "Buy Now" button that directs users to a payment page featuring a simple form with Zod validation, masked inputs using `react-input-mask`, and form management via `react-hook-form`.
 
 ### Live Demo
 
