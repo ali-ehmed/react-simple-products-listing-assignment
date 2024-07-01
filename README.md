@@ -8,7 +8,7 @@ You can view a live demo of the app here: [Product Listing App](https://react-si
 
 ### Features
 
-- **Server-Side Rendering**: Initial load of 20 products to ensure fast page loads and SEO optimization.
+- **Server-Side Rendering**: Initial load of 8 products to ensure fast page loads and SEO optimization.
 - **Infinite Scroll**: Smooth and continuous product loading as you scroll, enhancing user experience.
 - **Payment Integration**: Each product includes a direct "Buy Now" option that leads to a secure payment form.
 - **Form Validation**: Robust form validation using Zod and masked input fields for enhanced data integrity.
